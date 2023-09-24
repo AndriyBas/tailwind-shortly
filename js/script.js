@@ -2,6 +2,9 @@ const input = document.getElementById("link-input");
 const form = document.getElementById("link-form");
 const errorMsg = document.getElementById("error-msg");
 
+const menuBtn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+
 function isValidUrl(str) {
   const pattern = new RegExp(
     "^([a-zA-Z]+:\\/\\/)?" + // protocol
@@ -31,4 +34,11 @@ form.addEventListener("submit", (e) => {
     errorMsg.innerHTML = "";
     alert("Horray!");
   }
+});
+
+menuBtn.addEventListener("click", (e) => {
+  menuBtn.classList.toggle("open");
+  menu.classList.toggle("hidden");
+  // menu.classList.toggle("opacity-0");
+  // menu.classList.toggle("opacity-100");
 });
